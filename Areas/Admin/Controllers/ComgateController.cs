@@ -61,9 +61,8 @@ namespace Payments.Comgate.Areas.Admin.Controllers
 
             var model = new ConfigurationModel();
             model.UseSandbox = payPalStandardPaymentSettings.UseSandbox;
-            model.BusinessEmail = payPalStandardPaymentSettings.BusinessEmail;
-            model.PdtToken = payPalStandardPaymentSettings.PdtToken;
-            model.PdtValidateOrderTotal = payPalStandardPaymentSettings.PdtValidateOrderTotal;
+            model.MerchantId = payPalStandardPaymentSettings.MerchantId;
+            model.ComgateSecret = payPalStandardPaymentSettings.ComgateSecret;
             model.AdditionalFee = payPalStandardPaymentSettings.AdditionalFee;
             model.AdditionalFeePercentage = payPalStandardPaymentSettings.AdditionalFeePercentage;
             model.PassProductNamesAndTotals = payPalStandardPaymentSettings.PassProductNamesAndTotals;
@@ -89,9 +88,8 @@ namespace Payments.Comgate.Areas.Admin.Controllers
 
             //save settings
             payPalStandardPaymentSettings.UseSandbox = model.UseSandbox;
-            payPalStandardPaymentSettings.BusinessEmail = model.BusinessEmail;
-            payPalStandardPaymentSettings.PdtToken = model.PdtToken;
-            payPalStandardPaymentSettings.PdtValidateOrderTotal = model.PdtValidateOrderTotal;
+            payPalStandardPaymentSettings.MerchantId = model.MerchantId;
+            payPalStandardPaymentSettings.ComgateSecret = model.ComgateSecret;
             payPalStandardPaymentSettings.AdditionalFee = model.AdditionalFee;
             payPalStandardPaymentSettings.AdditionalFeePercentage = model.AdditionalFeePercentage;
             payPalStandardPaymentSettings.PassProductNamesAndTotals = model.PassProductNamesAndTotals;

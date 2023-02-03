@@ -1,3 +1,4 @@
+using ComgateNET.Domain.Enums;
 using Grand.Domain.Payments;
 
 namespace Payments.Comgate
@@ -5,12 +6,11 @@ namespace Payments.Comgate
     /// <summary>
     /// Represents paypal helper
     /// </summary>
-    public static class PaypalHelper
+    public static class ComgateHelper
     {
-        public static string OrderTotalSentToComgate => "OrderTotalSentToComgate";
+        public const string TRANSACTION_NUMBER = "comgate_transaction_number";
 
-        public static string ComgateUrlSandbox => "https://www.sandbox.paypal.com/us/cgi-bin/webscr";
-        public static string ComgateUrl => "https://www.paypal.com/us/cgi-bin/webscr";
+        public static string ComgateUrl => "https://payments.comgate.cz/v1.0/";
 
         /// <summary>
         /// Gets a payment status
@@ -60,6 +60,23 @@ namespace Payments.Comgate
                     break;
             }
             return result;
+        }
+        
+        /// <summary>
+        /// Gets a payment status
+        /// </summary>
+        /// <param name="paymentStatus">Comgate payment status</param>
+        /// <param name="pendingReason">Comgate pending reason</param>
+        /// <returns>Payment status</returns>
+        public static PaymentStatus GetPaymentStatus(PaymentState paymentStatus)
+        {
+            return paymentStatus switch {
+                PaymentState.PENDING => PaymentStatus.Pending,
+                PaymentState.PAID => PaymentStatus.Paid,
+                PaymentState.CANCELLED => PaymentStatus.Voided,
+                PaymentState.AUTHORIZED => PaymentStatus.Authorized,
+                _ => PaymentStatus.Pending,
+            };
         }
     }
 }

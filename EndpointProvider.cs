@@ -14,16 +14,18 @@ namespace Payments.Comgate
                  new { controller = "PaymentComgate", action = "PaymentInfo", area = "" }
             );
 
-            //PDT
-            endpointRouteBuilder.MapControllerRoute("Plugin.Payments.Comgate.PDTHandler",
-                 "Plugins/PaymentComgate/PDTHandler",
-                 new { controller = "PaymentComgate", action = "PDTHandler" }
+            // Comgate callback
+            endpointRouteBuilder.MapControllerRoute("Plugin.Payments.Comgate.InternalCallback",
+                 "Plugins/PaymentComgate/InternalCallback",
+                 new { controller = "PaymentComgate", action = "InternalCallback" }
             );
-            //IPN
-            endpointRouteBuilder.MapControllerRoute("Plugin.Payments.Comgate.IPNHandler",
-                 "Plugins/PaymentComgate/IPNHandler",
-                 new { controller = "PaymentComgate", action = "IPNHandler" }
+
+            // Comgate payment status
+            endpointRouteBuilder.MapControllerRoute("Plugin.Payments.Comgate.PaymentCallback",
+                 "Plugins/PaymentComgate/PaymentCallback",
+                 new { controller = "PaymentComgate", action = "PaymentCallback" }
             );
+
             //Cancel
             endpointRouteBuilder.MapControllerRoute("Plugin.Payments.Comgate.CancelOrder",
                  "Plugins/PaymentComgate/CancelOrder",

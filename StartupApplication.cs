@@ -13,7 +13,7 @@ namespace Payments.Comgate
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IPaymentProvider, ComgatePaymentProvider>();
-            services.AddHttpClient<IPaypalHttpClient, PaypalHttpClient>();
+            services.AddScoped<IComgatePaymentService, ComgatePaymentService>();
         }
 
         public int Priority => 10;

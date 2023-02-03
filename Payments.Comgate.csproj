@@ -20,6 +20,14 @@
 	</Target>
 
 	<ItemGroup>
+	  <PackageReference Include="ComgateNET" Version="1.0.0" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\..\Business\Grand.Business.Core\Grand.Business.Core.csproj">
 			<Private>false</Private>
 		</ProjectReference>
@@ -37,11 +45,13 @@
 		</ProjectReference>
 	</ItemGroup>
 
-
 	<ItemGroup>
-		<None Update="logo.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
+	  <None Update="logo.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="logo.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

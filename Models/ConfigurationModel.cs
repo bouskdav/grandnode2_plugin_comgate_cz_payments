@@ -10,14 +10,11 @@ namespace Payments.Comgate.Models
         [GrandResourceDisplayName("Plugins.Payments.Comgate.Fields.UseSandbox")]
         public bool UseSandbox { get; set; }
 
-        [GrandResourceDisplayName("Plugins.Payments.Comgate.Fields.BusinessEmail")]
-        public string BusinessEmail { get; set; }
+        [GrandResourceDisplayName("Plugins.Payments.Comgate.Fields.MerchantId")]
+        public string MerchantId { get; set; }
 
-        [GrandResourceDisplayName("Plugins.Payments.Comgate.Fields.PDTToken")]
-        public string PdtToken { get; set; }
-
-        [GrandResourceDisplayName("Plugins.Payments.Comgate.Fields.PDTValidateOrderTotal")]
-        public bool PdtValidateOrderTotal { get; set; }
+        [GrandResourceDisplayName("Plugins.Payments.Comgate.Fields.ComgateSecret")]
+        public string ComgateSecret { get; set; }
 
         [GrandResourceDisplayName("Plugins.Payments.Comgate.Fields.AdditionalFee")]
         public double AdditionalFee { get; set; }
