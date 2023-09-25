@@ -6,7 +6,6 @@ using Payments.Comgate;
     FriendlyName = "Comgate Czech",
     Group = "Payment methods",
     SystemName = ComgatePaymentDefaults.ProviderSystemName,
-    SupportedVersion = GrandVersion.SupportedPluginVersion,
     Author = "Laguna Solutions",
     Version = "1.00"
 )]
